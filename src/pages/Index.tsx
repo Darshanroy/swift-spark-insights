@@ -3,10 +3,8 @@ import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Testimonials } from "@/components/Testimonials";
 import { CTA } from "@/components/CTA";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       <main className="pt-16">
         <Hero />
@@ -14,7 +12,7 @@ const Index = () => {
           <Features />
         </div>
         <div id="testimonials">
-          <Testimonials />
+          
         </div>
         <CTA />
       </main>
@@ -40,8 +38,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
