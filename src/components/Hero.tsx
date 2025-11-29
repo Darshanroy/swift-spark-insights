@@ -1,77 +1,73 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
-import logo from "@/assets/logo.png";
+import { ArrowRight, Sparkles, Zap, Brain } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-accent to-background opacity-50" />
-      
-      {/* Content */}
-      <div className="container relative z-10 px-4 py-20">
-        <div className="mx-auto max-w-4xl text-center space-y-8 animate-fade-in">
-          {/* Logo */}
-          <div className="flex justify-center mb-6">
-            <img 
-              src={logo} 
-              alt="Swift Spark" 
-              className="h-24 w-24 object-contain drop-shadow-2xl animate-pulse"
-            />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background to-accent/20">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
+
+      <div className="container relative z-10 px-4 py-32">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/30 border border-border/50 backdrop-blur-sm animate-fade-in">
+            <Sparkles className="h-4 w-4 text-primary" />
+            <span className="text-sm font-medium">AI-Powered Self Discovery</span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            Discover what you're{" "}
-            <span className="relative inline-block">
-              really
-              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-primary"></span>
-            </span>{" "}
-            good at
+          {/* Main Headline */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-tight animate-fade-in">
+            Discover what you're
+            <br />
+            <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+              really good at
+            </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            In 5 questions and 5 minutes. No fluff, just you.
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            Uncover your hidden strengths in just 5 minutes. No therapy sessions, no endless forms—just honest insights powered by AI.
           </p>
 
-          {/* Value props */}
-          <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-            <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span>AI analyzes your stories</span>
+          {/* Value Props */}
+          <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 backdrop-blur border border-border/30">
+              <Zap className="h-4 w-4 text-primary" />
+              <span>5 Questions</span>
             </div>
-            <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span>Discover hidden superpowers</span>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 backdrop-blur border border-border/30">
+              <Brain className="h-4 w-4 text-primary" />
+              <span>AI Analysis</span>
             </div>
-            <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 backdrop-blur border border-border/30">
               <Sparkles className="h-4 w-4 text-primary" />
-              <span>Get actionable insights</span>
+              <span>Instant Results</span>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="pt-8">
-            <Button 
-              size="lg" 
-              className="text-lg px-8 py-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 shadow-xl"
-            >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <Button size="lg" className="text-lg px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90 group">
               Start Your Discovery
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+              Watch Demo
             </Button>
           </div>
 
-          {/* Social proof */}
-          <div className="pt-8 text-sm text-muted-foreground">
-            Join 10,000+ people uncovering their true potential
-          </div>
+          {/* Social Proof */}
+          <p className="text-sm text-muted-foreground pt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            Join 10,000+ people who've unlocked their potential
+          </p>
         </div>
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-secondary/5 rounded-full blur-3xl"></div>
+      {/* Bottom Gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };
